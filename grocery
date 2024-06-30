@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiving Support - Groceries</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        main {
+            text-align: center;
+            margin: 2em 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            flex-wrap: wrap;
+            margin: 2em 0;
+        }
+        .button-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Caregiving Support
+    </header>
+    <main>
+        <h1>Groceries</h1>
+        <div class="button-container">
+            <button>Fruits</button>
+            <button>Vegetables</button>
+            <button>Dairy</button>
+            <button>Meat</button>
+            <button>Beverages</button>
+        </div>
+    </main>
+</body>
+</html>

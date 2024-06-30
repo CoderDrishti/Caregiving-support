@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiving Support - Groceries</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('medi.png'); /* Ensure this path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh; /* Ensure it covers the full viewport height */
+            color: #333;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+        header {
+            background-color: rgba(76, 175, 80, 0.8); /* Add some transparency */
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        main {
+            text-align: center;
+            margin: 2em 0;
+        }
+        h1 {
+            font-size: 3.5em;
+            color: rgba(76, 175, 80, 0.8);
+        }
+        .button-container-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin: 2em;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left within the container */
+            gap: 1em;
+            max-width: 200px; /* Optional: limit the width of the button container */
+            /* Push the container to the right */
+            margin-right: 20%; /* Adjust this value to position between center and right */
+        }
+        .button-container a {
+            display: block; /* Ensure the anchor tag behaves like a block element */
+            width: 100%; /* Make the anchor tag fill the container width */
+        }
+        .button-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%; /* Make buttons fill the container width */
+        }
+        .button-container button:hover {
+            background-color: #45a049;
+            transform: scale(1.1); /* Scale up by 10% */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Caregiving Support
+    </header>
+    <main>
+        <h1>Medicines</h1>
+        <div class="button-container-wrapper">
+            <div class="button-container">
+                <a href="localstores.html" target="_blank"><button>Local Stores</button></a>
+                <a href="https://www.truemeds.in" target="_blank"><button>Truemeds</button></a>
+                <a href="https://www.1mg.com" target="_blank"><button>1mg</button></a>
+                <a href="https://www.medibuddy.in" target="_blank"><button>MediBuddy</button></a>
+                <a href="https://www.apollopharmacy.in/" target="_blank"><button>Apollo Pharmacy</button></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

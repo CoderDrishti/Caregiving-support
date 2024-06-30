@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheumatologists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f0f0f0; /* Light grey background */
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333; /* Dark grey for heading */
+        }
+       .doctor {
+            background-color: #fff; /* White background for each doctor's section */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+       .doctor h2 {
+            margin-top: 0;
+            color: #007bff; /* Blue for doctor's name */
+        }
+       .doctor p {
+            margin-bottom: 10px;
+            color: #666; /* Dark grey for contact info and location */
+        }
+       .doctor hr {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-color: #ccc;
+        }
+       .filter-container {
+            margin-bottom: 20px;
+        }
+        #filter-form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #filter-input {
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>General Practitioners</h1>
+
+<div class="filter-container">
+    <form id="filter-form">
+        <input type="text" id="filter-input" placeholder="Filter by city...">
+        <button id="filter-btn">Filter</button>
+    </form>
+</div>
+
+<div id="doctor-list">
+    <!-- Doctors will be populated here -->
+</div>
+
+<script>
+    // Sample data
+    const doctors = [
+        {name: "Dr. Vinay Kumar", contact: "+91 98123 45678", location: "New Delhi, India"},
+        {name: "Dr. Nidhi Singh", contact: "+91 98234 56789", location: "Mumbai, Maharashtra, India"},
+        {name: "Dr. Anupama Rao", contact: "+91 98345 67890", location: "Bangalore, Karnataka, India"},
+        {name: "Dr. Rajat Patel", contact: "+91 98456 78901", location: "Chennai, Tamil Nadu, India"},
+        {name: "Dr. Meera Jain", contact: "+91 98567 89012", location: "Hyderabad, Telangana, India"},
+        {name: "Dr. Arvind Sharma", contact: "+91 98678 90123", location: "Kolkata, West Bengal, India"},
+        {name: "Dr. Priya Malhotra", contact: "+91 98789 01234", location: "Ahmedabad, Gujarat, India"},
+        {name: "Dr. Manish Gupta", contact: "+91 98890 12345", location: "Jaipur, Rajasthan, India"}
+    ];
+
+    // Function to filter doctors by city
+    function filterDoctorsByCity(city) {
+        return doctors.filter(doctor => doctor.location.toLowerCase().includes(city.toLowerCase()));
+    }
+
+    // Function to display doctors
+    function displayDoctors(doctors) {
+        const doctorList = document.getElementById("doctor-list");
+        doctorList.innerHTML = ""; // Clear the list
+
+        doctors.forEach(doctor => {
+            const doctorDiv = document.createElement("div");
+            doctorDiv.classList.add("doctor");
+            doctorDiv.innerHTML = `
+                <h2>${doctor.name}</h2>
+                <p>Contact Number: ${doctor.contact}</p>
+                <p>Location: ${doctor.location}</p>
+            `;
+            doctorList.appendChild(doctorDiv);
+        });
+    }
+
+    // Initial display of doctors
+    displayDoctors(doctors);
+
+    // Filter functionality
+    const filterInput = document.getElementById("filter-input");
+    const filterBtn = document.getElementById("filter-btn");
+    filterBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const city = filterInput.value.trim();
+        const filteredDoctors = filterDoctorsByCity(city);
+        displayDoctors(filteredDoctors);
+    });
+</script>
+</body>
+</html>

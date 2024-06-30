@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiving Support - Local Stores</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .store {
+            border: 1px solid #444;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #222;
+        }
+        .store h3 {
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .store p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Caregiving Support</h1>
+        <h2>Local Stores</h2>
+    </header>
+    <div class="container">
+        <div class="store">
+            <h3>Store Name 1</h3>
+            <p><strong>Contact Number:</strong> 1234567890</p>
+            <p><strong>Address:</strong> 123 Main St, City, State, India</p>
+        </div>
+        <div class="store">
+            <h3>Store Name 2</h3>
+            <p><strong>Contact Number:</strong> 0987654321</p>
+            <p><strong>Address:</strong> 456 Market St, City, State, India</p>
+        </div>
+        <div class="store">
+            <h3>Store Name 3</h3>
+            <p><strong>Contact Number:</strong> 1122334455</p>
+            <p><strong>Address:</strong> 789 High St, City, State, India</p>
+        </div>
+        <!-- Add more stores as needed -->
+    </div>
+</body>
+</html>

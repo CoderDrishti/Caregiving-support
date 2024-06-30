@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: black; /* Set black background */
+            color: #fff; /* White text color */
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #26e72d; /* Dark grey for heading */
+            font-size: 3.5em;
+        }
+        .helper {
+            background-color: #fff; /* White background for each helper's section */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+        .helper h2 {
+            margin-top: 0;
+            color: #007bff; /* Blue for helper's name */
+        }
+        .helper p {
+            margin-bottom: 10px;
+            color: #666; /* Dark grey for contact info and location */
+        }
+        .helper hr {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-color: #ccc;
+        }
+        .filter-container {
+            margin-bottom: 20px;
+        }
+        #filter-form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #filter-input {
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Helpers</h1>
+
+<div class="filter-container">
+    <form id="filter-form">
+        <input type="text" id="filter-input" placeholder="Filter by city...">
+        <button id="filter-btn">Filter</button>
+    </form>
+</div>
+
+<div id="helper-list">
+    <!-- helpers will be populated here -->
+</div>
+
+<script>
+    // Sample data
+    const helpers = [
+        {name: " Neeta Kulkarni", contact: "+91 99887 66554", location: "Mumbai, Maharashtra, India"},
+        {name: " Arjun Patel", contact: "+91 98765 33445", location: "New Delhi, India"},
+        {name: " Priya Nair", contact: "+91 98345 98765", location: "Bangalore, Karnataka, India"},
+        {name: " Rakesh Gupta", contact: "+91 98456 12345", location: "Chennai, Tamil Nadu, India"},
+        {name: " Anjali Rao", contact: "+91 98234 45678", location: "Hyderabad, Telangana, India"},
+        {name: " Manish Desai", contact: "+91 98765 43210", location: "Pune, Maharashtra, India"},
+        {name: " Radhika Sharma", contact: "+91 98678 54321", location: "Kolkata, West Bengal, India"},
+        {name: " Vikram Mehta", contact: "+91 98567 65432", location: "Ahmedabad, Gujarat, India"},
+        {name: " Kavita Singh", contact: "+91 98456 76543", location: "Jaipur, Rajasthan, India"}
+    ];
+
+    // Function to filter helpers by city
+    function filterhelpersByCity(city) {
+        return helpers.filter(helper => helper.location.toLowerCase().includes(city.toLowerCase()));
+    }
+
+    // Function to display helpers
+    function displayhelpers(helpers) {
+        const helperList = document.getElementById("helper-list");
+        helperList.innerHTML = ""; // Clear the list
+
+        helpers.forEach(helper => {
+            const helperDiv = document.createElement("div");
+            helperDiv.classList.add("helper");
+            helperDiv.innerHTML = `
+                <h2>${helper.name}</h2>
+                <p>Contact Number: ${helper.contact}</p>
+                <p>Location: ${helper.location}</p>
+            `;
+            helperList.appendChild(helperDiv);
+        });
+    }
+
+    // Initial display of helpers
+    displayhelpers(helpers);
+
+    // Filter functionality
+    const filterInput = document.getElementById("filter-input");
+    const filterBtn = document.getElementById("filter-btn");
+    filterBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const city = filterInput.value.trim();
+        const filteredhelpers = filterhelpersByCity(city);
+        displayhelpers(filteredhelpers);
+    });
+</script>
+</body>
+</html>
